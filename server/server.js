@@ -11,7 +11,7 @@ app.use(cookieParser());
 app.use(
     cors({
       credentials: true,
-      origin: ['http://localhost:3000', 'https://task-pro-snowy.vercel.app'],
+      origin: ['http://localhost:3000', 'https://trackerx-frontend.vercel.app'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
     })
   );
