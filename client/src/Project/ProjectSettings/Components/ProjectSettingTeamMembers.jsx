@@ -52,7 +52,7 @@ function ProjectSettingTeamMembers() {
     };
 
     try {
-      const response = await Axios.post('http://localhost:8000/addMemberToProject', data, {
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/addMemberToProject`, data, {
         withCredentials: true,
       });
 
@@ -115,7 +115,7 @@ function ProjectSettingTeamMembers() {
       memberId: memberId
     };
     try {
-      const response = await Axios.post('http://localhost:8000/removeMemberFromProject', data, {
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/removeMemberFromProject`, data, {
         withCredentials: true,
       });
 

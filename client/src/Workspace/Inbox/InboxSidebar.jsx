@@ -46,7 +46,7 @@ const Inbox = (props) => {
     const fetchInboxMessages = async () => {
         try {
             const response = await axios.get(
-                'http://localhost:8000/api/issues/user',
+                `${process.env. REACT_APP_BACKEND_BASE_URL}/api/issues/user`,
                 { withCredentials: true }
             );
             const data = response.data.messages; // Assuming the response structure

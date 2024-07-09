@@ -2,8 +2,6 @@ const jwt = require('jsonwebtoken');
 
 module.exports.authenticate = function(req, res, next){
     try{
-        
-
         const decode=jwt.verify(req.cookies.usertoken, "abcdef");
         console.log("0000");
         req.userId = decode.id;

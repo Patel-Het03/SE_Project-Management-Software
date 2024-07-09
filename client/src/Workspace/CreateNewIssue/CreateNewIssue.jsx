@@ -70,7 +70,7 @@ const CreateNewIssue = (props) => {
 
       }
       console.log(projectId);
-       Axios.post("http://localhost:8000/api/users/workspace/project/members", data,{
+       Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/workspace/project/members`, data,{
         withCredentials:true// Replace with actual project ID
       })
       .then((res) => {
@@ -127,7 +127,7 @@ const CreateNewIssue = (props) => {
     // Send the new issue data to the backend API
     try {
       const response = await Axios.post(
-        "http://localhost:8000/api/users/workspace/project/issue",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/workspace/project/issue`,
         newIssue, 
         {
           withCredentials: true,

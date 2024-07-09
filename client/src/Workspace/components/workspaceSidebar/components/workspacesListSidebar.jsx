@@ -40,7 +40,7 @@ const WorkspaceListSidebar = (props) => {
     // comment for testing
     try {
       const response = await Axios.get(
-        "http://localhost:8000/api/getAllWorkspaceOfUser",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/getAllWorkspaceOfUser`,
         {
           withCredentials: true,
         }
@@ -101,7 +101,7 @@ const WorkspaceListSidebar = (props) => {
       }
       
       const response = await Axios.post(
-        "http://localhost:8000/workspace/members",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/workspace/members`,
         data,
         {
           withCredentials: true,

@@ -12,7 +12,7 @@ function TitleDescrip() {
     const fetchIssue = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/workspace/issue/description`,
+          `${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/description`,
           {
             params: {
               activeIssueId: activeIssue._id,
@@ -41,7 +41,7 @@ function TitleDescrip() {
       // Make a PUT request to the update issue details API
       console.log("activnesss", activeIssue._id);
       const response = await axios.put(
-        "http://localhost:8000/api/workspace/issue/updateDescription",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/updateDescription`,
         {
           issueId: activeIssue._id, // replace with actual issue ID
           update,

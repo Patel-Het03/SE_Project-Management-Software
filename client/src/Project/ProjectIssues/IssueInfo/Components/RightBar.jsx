@@ -88,7 +88,7 @@ function RightBar() {
   const fetchStatus = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/workspace/issue/description`,
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/description`,
         {
           params: {
             activeIssueId: activeIssue._id,
@@ -110,7 +110,7 @@ function RightBar() {
       const projid = assigneeUsername.issue.projectId;
 
       const response2 = await axios.get(
-        `http://localhost:8000/api/workspace/issue/details`,
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/details`,
         {
           params: {
             id: assigner,
@@ -145,7 +145,7 @@ function RightBar() {
       // Make a PUT request to the update issue details API
       console.log("activnesss", activeIssue._id);
       const response = await axios.put(
-        "http://localhost:8000/api/workspace/issue/updateDescription",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/updateDescription`,
         {
           issueId: activeIssue._id, // replace with actual issue ID
           update,
@@ -192,7 +192,7 @@ function RightBar() {
       );
       if (confirmation) {
         await axios.delete(
-          "http://localhost:8000/api/workspace/issue/details",
+          `${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/details`,
           {
             params: {
               activeIssue: activeIssue,

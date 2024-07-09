@@ -33,7 +33,7 @@ function ProjectSettingGeneral() {
   const handleSubmit = async () => {
     try {
       const response = await axios.put(
-        "http://localhost:8000/api/projectUpdateInfo",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/projectUpdateInfo`,
         {
           projectID: project._id,
           name: projectName,

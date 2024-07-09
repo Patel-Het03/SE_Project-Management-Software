@@ -58,7 +58,7 @@ const Email = () => {
     //     // } else {
     //     //     setSpiner(true)
 
-    //     Axios.post("http://localhost:8000/api/users/email", user, {
+    //     Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/email`, user, {
     //   withCredentials: true,
     // })
     // .then((res) => {

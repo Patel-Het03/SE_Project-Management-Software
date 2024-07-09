@@ -187,7 +187,7 @@ const CreateNewProject = (props) => {
   const storeProject = async (data) => {
     try {
       const response = await Axios.post(
-        "http://localhost:8000/api/createProject",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/createProject`,
         data,
         {
           withCredentials: true,

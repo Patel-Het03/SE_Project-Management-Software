@@ -1,1 +1,1 @@
-export const BACKEND_URL = "http://localhost:8000/api"
+export const BACKEND_URL = `${process.env. REACT_APP_BACKEND_BASE_URL}/api`

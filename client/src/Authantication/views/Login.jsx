@@ -29,7 +29,7 @@ const Login = (props) => {
       email,
       password,
     };
-    Axios.post("http://localhost:8000/api/users/login", user, {
+    Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/login`, user, {
       withCredentials: true,
     })
       .then((res) => {

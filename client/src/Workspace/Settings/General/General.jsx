@@ -51,7 +51,7 @@ const General = () => {
   const fetchWorkspace = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/getActiveWorkspaceOfUser`,
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/getActiveWorkspaceOfUser`,
         {
           params: {
             activeWorkspaceId: workspaceId,
@@ -80,7 +80,7 @@ const General = () => {
     try {
       // Make a PUT request to update the workspace settings
       await axios.put(
-        "http://localhost:8000/api/getActiveWorkspaceOfUser",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/getActiveWorkspaceOfUser`,
         {
           activeWorkspaceId: workspaceId,
           newName: workspaceName,
@@ -113,7 +113,7 @@ const General = () => {
       );
       if (confirmation) {
         await axios.delete(
-          "http://localhost:8000/api/getActiveWorkspaceOfUser",
+          `${process.env. REACT_APP_BACKEND_BASE_URL}/api/getActiveWorkspaceOfUser`,
           {
             params: {
               activeWorkspaceId: workspaceId,

@@ -28,7 +28,7 @@ const ChartComponent = () => {
       const fetchIssues = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:8000/api/users/workspace/issues`,
+            `${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/workspace/issues`,
             {
               params: {
                 activeWorkspaceId: workspaceId,

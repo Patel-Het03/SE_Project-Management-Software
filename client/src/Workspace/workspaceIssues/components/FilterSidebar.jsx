@@ -35,7 +35,7 @@ const FilterSidebar = (props) => {
       const data = {
         workspaceId: workspaceId
       }
-      const response = await Axios.post('http://localhost:8000/workspace/members', data, {
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/workspace/members`, data, {
         withCredentials: true,
       });
 
@@ -67,7 +67,7 @@ const FilterSidebar = (props) => {
       const data = {
         workspaceId: workspaceId
       }
-      const response = await Axios.post('http://localhost:8000/api/getAllProjectOfUser', data, {
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/getAllProjectOfUser`, data, {
         withCredentials: true,
       });
 

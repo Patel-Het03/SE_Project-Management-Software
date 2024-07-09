@@ -29,7 +29,7 @@ function Comment() {
       const newComment = { commentText: commentInput, commentedBy: assigne }; 
       try {
         // Make a POST request to the add comment API
-        const response = await axios.post('http://localhost:8000/api/workspace/issue/comment', {
+        const response = await axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/comment`, {
           issueId: activeIssue._id, // replace with actual issue ID
           comment: newComment
         }, {
@@ -47,7 +47,7 @@ function Comment() {
   useEffect(() => {
     const fetchComments = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/workspace/issue/comments', {
+        const response = await axios.get(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/workspace/issue/comments`, {
           params: {
             issueId: activeIssue._id, // replace with actual issue ID
           },
@@ -68,7 +68,7 @@ function Comment() {
   useEffect(() => {
     const fetchIssue = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/users/profile`, {
+        const response = await axios.get(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/profile`, {
           params: {
             activeIssueId: activeIssue._id,
           },

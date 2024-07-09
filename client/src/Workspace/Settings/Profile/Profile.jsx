@@ -47,7 +47,7 @@ const Profile = () => {
   const profile = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/users/profile`,
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/profile`,
         {
           withCredentials: true,
         }
@@ -79,7 +79,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:8000/api/users/profile`,
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/profile`,
         {
           fullname: formData.fullname,
           username: formData.username,

@@ -82,7 +82,7 @@ const ProjectListSidebar = (props) => {
       const data = {
         workspaceId: workspaceId,
       }
-      const response = await Axios.post('http://localhost:8000/api/getAllProjectOfUser', data, {
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/getAllProjectOfUser`, data, {
         withCredentials: true,
       });
 
@@ -116,7 +116,7 @@ const ProjectListSidebar = (props) => {
   const fetchActiveProjectIssue = async (projectId) => {
     try {
       // Use Axios to make a GET request with query parameters
-      const response = await Axios.get(`http://localhost:8000/project/allIssues/${projectId}`, {
+      const response = await Axios.get(`${process.env. REACT_APP_BACKEND_BASE_URL}/project/allIssues/${projectId}`, {
         withCredentials: true,
       }
       );
@@ -134,7 +134,7 @@ const ProjectListSidebar = (props) => {
   const fetchAllMemberOfProject= async(projectId)=>{
     try{
       const response = await Axios.post(
-        "http://localhost:8000/api/projectInfo",
+        `${process.env. REACT_APP_BACKEND_BASE_URL}/api/projectInfo`,
         {
           projectID: projectId, // Pass the projectID in the request body
         },
@@ -159,7 +159,7 @@ const ProjectListSidebar = (props) => {
   const fetchActiveProjectSprintList = async (projectID) => {
     try {
       // Use Axios to make a GET request with query parameters
-      const response = await Axios.post("http://localhost:8000/api/getSprintList", 
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/getSprintList`, 
       {
         projectID: projectID,
       },

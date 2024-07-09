@@ -11,13 +11,13 @@ const router = express.Router();
 
 
 const transporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: process.env.SMTP_SERVER,
   port: 587,
   secure: false,
   requireTLS: true,
   auth: {
-    user: '2021csb1107@iitrpr.ac.in', // Update with your email
-    pass: 'KUSHagra08092004@', // Update with your email password
+    user: process.env.MAIL_USER, // Update with your email
+    pass: process.env.MAIL_PASS, // Update with your email password
   },
 });
 
@@ -325,7 +325,7 @@ exports.addMemberByEmail = async (req, res) => {
 
     // Send email invitation to the user
     const mailOptions = {
-      from: '2021csb1107@iitrpr.ac.in',
+      from: process.env.MAIL_USER,
       to: email,
       subject: `Invitation to join ${workspace.name} workspace`,
       text: `Hello ${existingUser.name},\n\nYou have joined the ${workspace.name} workspace.`,

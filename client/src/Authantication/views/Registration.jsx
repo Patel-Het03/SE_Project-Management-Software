@@ -27,7 +27,7 @@ const Registration = (props) => {
       password,
       confirmPassword,
     };
-    Axios.post("http://localhost:8000/api/users", newUser, {
+    Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users`, newUser, {
       withCredentials: true,
     })
       .then((res) => {

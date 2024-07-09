@@ -192,7 +192,7 @@ export default function Sprint(props) {
   const updateIssueStatus = async (issueId, newStatus) => {
     try {
       // Send a PATCH request to update the issue status
-      const response = await Axios.patch(`http://localhost:8000/issues/${issueId}/changeStatus`, { newStatus });
+      const response = await Axios.patch(`${process.env. REACT_APP_BACKEND_BASE_URL}/issues/${issueId}/changeStatus`, { newStatus });
       // Handle the response
       if (response.status === 200) {
         // console.log(response.data);

@@ -21,13 +21,13 @@ const Navbar = (props) => {
 
   const logout = () => {
     console.log("ggg");
-    window.open(`http://localhost:8000/api/users/logout`, "_self");
+    window.open(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/logout`, "_self");
   };
   useEffect(() => {
     const profile = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/users/profile`,
+          `${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/profile`,
           {
             withCredentials: true,
           }

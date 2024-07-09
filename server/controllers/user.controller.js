@@ -8,13 +8,13 @@ const {Workspace}=require("../models/workspace.model");
 
 
 const tarnsporter = nodemailer.createTransport({
-  host: 'smtp.gmail.com',
+  host: process.env.SMTP_SERVER,
   port: 587, secure: false,
   requireTLS: true,
   auth:
   {
-    user: "2021csb1107@iitrpr.ac.in",
-    pass: "KUSHagra08092004@"
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS
   }
 })
 
@@ -44,7 +44,7 @@ module.exports.userOtpSend = async (req, res) => {
               await updateData.save();
 
               const mailOptions = {
-                  from: process.env.EMAIL,
+                  from: process.env.MAIL_USER,
                   to: email,
                   subject: "Sending Email For Otp Validation",
                   text: `OTP:- ${OTP}`
@@ -127,7 +127,7 @@ module.exports.create = (req, res) => {
         {
           id: user._id,
         },
-        "abcdef"
+        process.env.SECRET_KEY
       );
       console.log(userToken)
       res
@@ -186,7 +186,7 @@ module.exports.login = async (req, res) => {
       {
         id: user._id,
       },
-      "abcdef"
+      process.env.SECRET_KEY
     );
     console.log(userToken);
     res.status(200)
@@ -204,7 +204,7 @@ exports.changeinfo = async (req, res) => {
   console.log(password)
   
 
-  const client=new MongoClient("mongodb+srv://Kushagra_18:bDFTOPZeMaygXAE3@cluster0.mxxglsz.mongodb.net/Demo?retryWrites=true&w=majority")
+  const client=new MongoClient(process.env.MONGO_URI)
 
 
   try {

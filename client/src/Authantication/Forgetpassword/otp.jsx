@@ -70,7 +70,7 @@ const Otp = () => {
     //         email
 
     //     }
-    //     Axios.post('http://localhost:8000/api/users', newUser, { withCredentials: true })
+    //     Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users`, newUser, { withCredentials: true })
     //         .then(res => {
     //             console.log("User created successfully: " + res.data.user_id);
     //             localStorage.setItem('userID', res.data.user._id);

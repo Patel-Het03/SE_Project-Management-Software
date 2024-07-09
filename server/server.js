@@ -4,10 +4,17 @@ const app = express();
 const port = 8000;
 const cookieParser = require('cookie-parser');
 const socketIo = require('socket.io');
+require('dotenv').config();
 
 require('../server/config/mongoose.config');
 app.use(cookieParser());
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(
+    cors({
+      credentials: true,
+      origin: ['http://localhost:3000', 'https://task-pro-snowy.vercel.app'],
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
+    })
+  );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 require('./routes/user.routes')(app);

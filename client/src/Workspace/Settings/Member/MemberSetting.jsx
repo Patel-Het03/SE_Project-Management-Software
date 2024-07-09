@@ -58,7 +58,7 @@ function MemberList() {
     }
     try {
       // Make a POST request to the backend API endpoint
-      const response = await Axios.post('http://localhost:8000/addMemberByEmail', data,{
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/addMemberByEmail`, data,{
         withCredentials: true,
       });
   
@@ -110,7 +110,7 @@ function MemberList() {
       memberId: memberId
     };
     try {
-      const response = await Axios.post('http://localhost:8000/removeMemberFromWorkspace', data, {
+      const response = await Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/removeMemberFromWorkspace`, data, {
         withCredentials: true,
       });
 

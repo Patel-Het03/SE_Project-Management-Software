@@ -27,7 +27,7 @@ const WorkPage = () => {
       url,
     };
 
-    Axios.post("http://localhost:8000/api/users/workspace", newWorkspcae, {
+    Axios.post(`${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/workspace`, newWorkspcae, {
       withCredentials: true,
     }).then((res) => {
       // console.log(res.data.workspace);

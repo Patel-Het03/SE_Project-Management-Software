@@ -24,7 +24,7 @@ const ActivePage = () => {
   const updateIssueStatus = async (issueId, newStatus) => {
     try {
       // Send a PATCH request to update the issue status
-      const response = await axios.patch(`http://localhost:8000/issues/${issueId}/changeStatus`, { newStatus });
+      const response = await axios.patch(`${process.env. REACT_APP_BACKEND_BASE_URL}/issues/${issueId}/changeStatus`, { newStatus });
       // Handle the response
       if (response.status === 200) {
         console.log(response.data);
@@ -63,7 +63,7 @@ const ActivePage = () => {
       const fetchIssues = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:8000/api/users/workspace/issues`,
+            `${process.env. REACT_APP_BACKEND_BASE_URL}/api/users/workspace/issues`,
             {
               params: {
                 activeWorkspaceId: workspaceId,
