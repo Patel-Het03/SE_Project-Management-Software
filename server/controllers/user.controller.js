@@ -193,7 +193,7 @@ module.exports.login = async (req, res) => {
       .cookie("usertoken", userToken, {
         httpOnly: true,    // Ensures the cookie is not accessible via JavaScript
         secure: true,      // Ensures the cookie is only sent over HTTPS
-        sameSite: 'Lax',  // Allows cross-site requests
+        sameSite: 'None',  // Allows cross-site requests
         maxAge: 3600000    // Sets cookie expiration time (1 hour in milliseconds)
       })
       .json({ message: "Success!", user: user });
