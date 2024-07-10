@@ -191,7 +191,6 @@ module.exports.login = async (req, res) => {
     console.log(userToken);
     res.status(200)
       .cookie("usertoken", userToken, {
-        httpOnly: true,    // Ensures the cookie is not accessible via JavaScript
         secure: true,      // Ensures the cookie is only sent over HTTPS
         sameSite: 'None',  // Allows cross-site requests
         maxAge: 3600000    // Sets cookie expiration time (1 hour in milliseconds)
