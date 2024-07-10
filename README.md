@@ -6,7 +6,6 @@ Welcome to the Collaborative Project Management Software! This application is de
 ## Sliding Image Section
 
 <div id="slideshow">
-<div class="slides">
   <img src="Images/Home.png" alt="Image 1" width="600" />
   <img src="Images/Login.png" alt="Image 1" width="600" />
   <img src="Images/WorkSpace_Dashboard.png" alt="Image 1" width="600" />
@@ -17,43 +16,33 @@ Welcome to the Collaborative Project Management Software! This application is de
   <img src="Images/Create_Issue.png" alt="Image 1" width="600" />
   <img src="Images/Issue_Info.png" alt="Image 1" width="600" />
   <img src="Images/Analytic_Page.png" alt="Image 1" width="600" />
-   </div>
-  <div class="arrows">
-    <span class="arrow prev">❮</span>
-    <span class="arrow next">❯</span>
-  </div>
+
+
 </div>
 
 <style>
 #slideshow {
-  position: relative;
-  width: 600px; /* Adjust to your preferred size */
+  display: flex;
   overflow: hidden;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slides img {
   width: 600px; /* Adjust to your preferred size */
 }
 
-.arrows {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
+#slideshow img {
+  flex-shrink: 0;
+  width: 600px; /* Adjust to your preferred size */
+  animation: slide 15s infinite;
 }
 
-.arrow {
-  cursor: pointer;
-  font-size: 2em;
-  user-select: none;
-  padding: 0 10px;
+@keyframes slide {
+  0%, 20%, 100% {
+    transform: translateX(0%);
+  }
+  25%, 45% {
+    transform: translateX(-100%);
+  }
+  50%, 70% {
+    transform: translateX(-200%);
+  }
 }
 </style>
 
