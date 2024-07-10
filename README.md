@@ -3,6 +3,60 @@
 
 Welcome to the Collaborative Project Management Software! This application is designed to streamline project management for teams, providing tools for task assignment, issue tracking, and workspace organization. Built with React and Node.js, the system uses JWT-based authentication and MongoDB for secure and efficient data management.
 
+## Sliding Image Section
+
+<div id="slideshow">
+<div class="slides">
+  <img src="Images/Home.png" alt="Image 1" width="600" />
+  <img src="Images/Login.png" alt="Image 1" width="600" />
+  <img src="Images/WorkSpace_Dashboard.png" alt="Image 1" width="600" />
+  <img src="Images/Workspace_Setting.png" alt="Image 1" width="600" />
+  <img src="Images/Project_Dashboard.png" alt="Image 1" width="600" />
+  <img src="Images/Sprint_Issue.png" alt="Image 1" width="600" />
+  <img src="Images/Project_Setting.png" alt="Image 1" width="600" />
+  <img src="Images/Create_Issue.png" alt="Image 1" width="600" />
+  <img src="Images/Issue_Info.png" alt="Image 1" width="600" />
+  <img src="Images/Analytic_Page.png" alt="Image 1" width="600" />
+   </div>
+  <div class="arrows">
+    <span class="arrow prev">❮</span>
+    <span class="arrow next">❯</span>
+  </div>
+</div>
+
+<style>
+#slideshow {
+  position: relative;
+  width: 600px; /* Adjust to your preferred size */
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+  width: 600px; /* Adjust to your preferred size */
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 2em;
+  user-select: none;
+  padding: 0 10px;
+}
+</style>
+
 
 ## Table of Contents
 
