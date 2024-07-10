@@ -3,9 +3,10 @@
 
 Welcome to the Collaborative Project Management Software! This application is designed to streamline project management for teams, providing tools for task assignment, issue tracking, and workspace organization. Built with React and Node.js, the system uses JWT-based authentication and MongoDB for secure and efficient data management.
 
-## Sliding Image Section
+## 
 
-<div id="slideshow">
+<details>
+    <summary>Click here to view images</summary> 
   <img src="Images/Home.png" alt="Image 1" width="600" />
   <img src="Images/Login.png" alt="Image 1" width="600" />
   <img src="Images/WorkSpace_Dashboard.png" alt="Image 1" width="600" />
@@ -18,33 +19,10 @@ Welcome to the Collaborative Project Management Software! This application is de
   <img src="Images/Analytic_Page.png" alt="Image 1" width="600" />
 
 
-</div>
+</details>
 
-<style>
-#slideshow {
-  display: flex;
-  overflow: hidden;
-  width: 600px; /* Adjust to your preferred size */
-}
 
-#slideshow img {
-  flex-shrink: 0;
-  width: 600px; /* Adjust to your preferred size */
-  animation: slide 15s infinite;
-}
 
-@keyframes slide {
-  0%, 20%, 100% {
-    transform: translateX(0%);
-  }
-  25%, 45% {
-    transform: translateX(-100%);
-  }
-  50%, 70% {
-    transform: translateX(-200%);
-  }
-}
-</style>
 
 
 ## Table of Contents
