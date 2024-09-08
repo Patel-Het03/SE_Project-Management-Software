@@ -10,7 +10,7 @@ require('../server/config/mongoose.config');
 app.use(cookieParser());
 app.use(
     cors({
-      credentials: true,
+      // credentials: true,
       origin: ['http://localhost:3000', 'https://trackerx-frontend.vercel.app','*'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH']
     })
